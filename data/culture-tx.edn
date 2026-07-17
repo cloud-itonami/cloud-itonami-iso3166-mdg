@@ -1,0 +1,14 @@
+;; data/culture-tx.edn — DataScript tx-data derived from src/culture/facts.cljc
+;; `culture.facts/catalog` (ADR-2607171400 addendum 2, Wave 1 country-level).
+;; Same shape across every cloud-itonami-iso3166-* sibling. Do not hand-edit;
+;; regenerate from the catalog.
+
+[
+#:culture{:id "mdg.dish.romazava", :name "Romazava", :country "MDG", :kind :dish, :summary "National dish of Madagascar, consisting of greens, zebu meat, tomatoes and onions, typically accompanied by rice.", :url "https://en.wikipedia.org/wiki/Romazava", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "mdg.dish.ravitoto", :name "Ravitoto", :country "MDG", :kind :dish, :summary "Traditional dish in Malagasy cuisine of crushed cassava leaves cooked with garlic and fatty pork.", :url "https://en.wikipedia.org/wiki/Ravitoto", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "mdg.dish.mofo-gasy", :name "Mofo gasy", :country "MDG", :kind :dish, :summary "Malagasy breakfast food made from a batter of sweetened rice flour poured into greased circular molds.", :url "https://en.wikipedia.org/wiki/Malagasy_cuisine", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "mdg.product.vanilla", :name "Madagascar vanilla", :country "MDG", :kind :product, :summary "In 2023, world production of raw vanilla was 7,433 tonnes, led by Madagascar with 42% of the total; Madagascar's and Indonesia's cultivations together produce two-thirds of the world's vanilla supply.", :url "https://en.wikipedia.org/wiki/Vanilla", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "mdg.festival.famadihana", :name "Famadihana", :country "MDG", :kind :festival, :summary "Malagasy funerary tradition in which families bring forth the bodies of their ancestors from the family crypts, rewrap the corpses in fresh cloth, and dance while carrying them.", :url "https://en.wikipedia.org/wiki/Famadihana", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "mdg.heritage.tsingy-de-bemaraha", :name "Tsingy de Bemaraha Strict Nature Reserve", :country "MDG", :kind :heritage, :summary "UNESCO World Heritage Site in Madagascar, designated in 1990, recognized for its unique geography, preserved mangrove forests, and wild bird and lemur populations.", :url "https://en.wikipedia.org/wiki/Tsingy_de_Bemaraha_Strict_Nature_Reserve", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "mdg.heritage.royal-hill-of-ambohimanga", :name "Royal Hill of Ambohimanga", :country "MDG", :kind :heritage, :summary "Fortified royal settlement northeast of Antananarivo and UNESCO World Heritage Site, associated with strong feelings of national identity and maintaining its spiritual and sacred character for centuries.", :url "https://en.wikipedia.org/wiki/Royal_Hill_of_Ambohimanga", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+]
