@@ -1,0 +1,54 @@
+(ns marketentry.facts-test
+  (:require [clojure.test :refer [deftest is testing]]
+            [marketentry.facts :as facts]))
+
+(deftest mdg-has-spec-basis
+  (let [sb (facts/spec-basis "MDG")]
+    (is (some? sb))
+    (is (string? (:provenance sb)))
+    (is (seq (:required-evidence sb)))
+    (is (= 4 (count (:required-evidence sb)))
+        "an honestly-scoped catalog, matching the MOZ-family precedent, not padded")))
+
+(deftest mdg-has-armp-ineligibility-sub-map
+  (testing "the flagship ARMP ineligibility-list mechanism is grounded and exposed as its own sub-map"
+    (let [ai (facts/armp-ineligibility-spec-basis "MDG")]
+      (is (some? ai))
+      (is (re-find #"Article 90" (:armp-ineligibility-legal-basis ai)))
+      (is (re-find #"cinq ans" (:armp-ineligibility-legal-basis ai)))
+      (is (re-find #"armp\.mg" (:armp-ineligibility-provenance ai))))))
+
+(deftest mdg-owner-authority-names-armp-and-current-law
+  (testing "owner-authority/legal-basis cite ARMP and the CURRENT Loi n°2016-055, not the superseded 2004-009 one"
+    (let [sb (facts/spec-basis "MDG")]
+      (is (re-find #"ARMP" (:owner-authority sb)))
+      (is (re-find #"2016-055" (:legal-basis sb)))
+      (is (re-find #"2016-055" (:provenance sb))))))
+
+(deftest mdg-national-spec-confirms-transactional-eprocurement-portal
+  (testing "unlike -moz, MDG DOES have a confirmed national e-procurement transactional portal domain"
+    (let [sb (facts/spec-basis "MDG")]
+      (is (re-find #"e-GP" (:national-spec sb))))))
+
+(deftest mdg-required-evidence-does-not-cite-ohada
+  (testing "MDG is not an OHADA member -- required-evidence must cite Madagascar's own RCS/companies law, never OHADA's RCCM/AUSCGIE"
+    (let [sb (facts/spec-basis "MDG")]
+      (is (some #(re-find #"RCS" %) (:required-evidence sb)))
+      (is (not-any? #(re-find #"(?i)OHADA|RCCM|AUSCGIE" %) (:required-evidence sb))))))
+
+(deftest unknown-jurisdiction-has-no-spec-basis
+  (is (nil? (facts/spec-basis "ATL")))
+  (is (nil? (facts/spec-basis "ZZZ"))))
+
+(deftest required-evidence-satisfied
+  (let [sb (facts/spec-basis "MDG")
+        all (:required-evidence sb)]
+    (is (true? (facts/required-evidence-satisfied? "MDG" all)))
+    (is (not (facts/required-evidence-satisfied? "MDG" (take 1 all))))
+    (is (nil? (facts/required-evidence-satisfied? "ATL" all)))))
+
+(deftest coverage-is-honest
+  (let [c (facts/coverage ["MDG" "ATL"])]
+    (is (= 2 (:requested c)))
+    (is (= 1 (:covered c)))
+    (is (= ["ATL"] (:missing-jurisdictions c)))))
