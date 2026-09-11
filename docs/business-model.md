@@ -88,7 +88,7 @@ itself this session:
   juillet 2004") that is recorded honestly rather than silently
   resolved.
 
-See `src/marketentry/facts.cljc` and `src/statute/facts.cljc` for the
+See `src/marketentry/facts.cljk` and `src/statute/facts.cljk` for the
 full catalog entries and their docstrings, which are the single source
 of truth for every regulatory claim this actor makes.
 
