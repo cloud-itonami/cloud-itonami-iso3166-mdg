@@ -69,7 +69,7 @@ independent sources' own citation of the Code du Travail's promulgation
 date) and honestly left out or flagged rather than invented.
 
 ```
-clojure -M:dev:test
+kbb -M:dev:test
 ```
 
 ## Culture catalog
