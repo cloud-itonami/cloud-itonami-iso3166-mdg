@@ -37,7 +37,7 @@ OHADA members, unlike Madagascar):
   statutory cap (Article 90 §IX) absent an ARMP récidive finding -- a
   genuine two-condition, time-bounded test grounded directly in Article
   90's own text.
-- `src/statute/facts.cljc` -- general-law catalog: Loi n°2003-044
+- `src/statute/facts.cljk` -- general-law catalog: Loi n°2003-044
   portant Code du Travail, Loi n°2007-036 du 14 janvier 2008 sur les
   investissements à Madagascar, and Loi n°2003-036 du 30 janvier 2004
   relative aux sociétés commerciales. **Madagascar is NOT an OHADA
@@ -61,7 +61,7 @@ database returned a genuine Cloudflare bot-detection challenge this
 iteration did NOT attempt to bypass, so that one citation is sourced
 from a private Francophone-African legal-text aggregator via the
 Wayback Machine and explicitly flagged as such -- see
-`src/marketentry/facts.cljc`'s namespace docstring for the full research
+`src/marketentry/facts.cljk`'s namespace docstring for the full research
 trail, including facts this iteration could NOT verify (EDBM's own
 founding decree/law number; the specific article establishing the NIF
 regime itself; an unresolved six-week date discrepancy between two
@@ -80,7 +80,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Madagascar:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.cljk` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from

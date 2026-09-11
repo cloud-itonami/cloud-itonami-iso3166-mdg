@@ -68,7 +68,7 @@
 
 ## Demo engagements
 
-`src/marketentry/store.cljc`'s `demo-data` seeds five engagements:
+`src/marketentry/store.cljk`'s `demo-data` seeds five engagements:
 
 | id     | scenario                                                                     |
 |--------|-------------------------------------------------------------------------------|
