@@ -19,7 +19,7 @@
   listed OR an unlawfully-long prior exclusion on record absent a
   récidive finding), reflecting Article 90 §IX-X's own time-bounded,
   récidive-gated design."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [langgraph.graph :as g]
             [marketentry.store :as store]
             [marketentry.operation :as op]))
